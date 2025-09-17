@@ -225,17 +225,7 @@ body {
 /* Ocultar marca de agua "Fede & Lore" del fondo en el modal */
 .modal-overlay .script-names { display: none; }
 
-.modal-overlay .welcome-hero::before {
-    content: "";
-    position: absolute;
-    inset: -40vh -10vw -40vh -10vw;
-    background-image: url('https://i.ibb.co/5W8Zjdk9/09e63d1c599174e6560fae197a8f996a.jpg');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.55;
-    z-index: -1;
-    filter: blur(15px);
-}
+.modal-overlay .welcome-hero::before { display: none; }
 
 .welcome-heading {
     font-family: 'Playfair Display', serif;
@@ -288,16 +278,14 @@ body {
 }
 
 /* Botones del modal: colores solicitados */
-.modal-buttons #enterWithMusic.btn-wedding,
-.modal-buttons #enterWithoutMusic.btn-wedding {
+.modal-buttons .btn-wedding {
     background-image: none !important;
-    background: #FFF2F3 !important;
-    background-color: #FFF2F3 !important;
+    background: #FDE2E1 !important;
+    background-color: #FDE2E1 !important;
     border: none !important;
     color: #899899 !important;
 }
-.modal-buttons #enterWithMusic.btn-wedding:hover,
-.modal-buttons #enterWithoutMusic.btn-wedding:hover {
+.modal-buttons .btn-wedding:hover {
     transform: translateY(-2px) scale(1.05);
     box-shadow: var(--shadow-gold);
 }
