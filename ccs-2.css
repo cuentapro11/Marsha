@@ -1152,6 +1152,26 @@ div, button, input, textarea {
     max-width: 300px;
 }
 
+/* Floating WhatsApp confirm button */
+.whatsapp-fab {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.whatsapp-fab:hover {
+    filter: brightness(1.05);
+}
+
 /* Final overrides: eliminar completamente anillos/bordes dorados de todos los iconos */
 .event-icon,
 .camera-icon,
