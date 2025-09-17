@@ -1157,16 +1157,21 @@ div, button, input, textarea {
     position: fixed;
     right: 1rem;
     bottom: 1rem;
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
+    height: 48px;
+    border-radius: 9999px;
     border: none;
     background: #25D366;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 0.5rem;
     cursor: pointer;
     z-index: 1000;
+    padding: 0 0.875rem;
+}
+.whatsapp-fab span {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
 }
 .whatsapp-fab:hover {
     filter: brightness(1.05);
