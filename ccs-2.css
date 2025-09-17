@@ -1161,6 +1161,11 @@ div, button, input, textarea {
     filter: brightness(1.05);
 }
 
+/* Restore border specifically for the WhatsApp button in RSVP */
+.rsvp-section .whatsapp-in-section {
+    border: 2px solid #ffffff !important;
+}
+
 /* Final overrides: eliminar completamente anillos/bordes dorados de todos los iconos */
 .event-icon,
 .camera-icon,
