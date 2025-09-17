@@ -1,14 +1,11 @@
 // Variables globales
 let isPlaying = false;
 let player = null;
-let currentSlide = 0;
-const totalSlides = 12;
 let enableMusic = false;
 
 // Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
     initializeCountdown();
-    initializeCarousel();
     initializeModal();
     initializeParallax();
     // applySectionTheming(); // Desactivado para respetar colores específicos por icono
@@ -166,57 +163,7 @@ function initializeCountdown() {
     setInterval(updateCountdown, 1000);
 }
 
-// Carrusel
-function initializeCarousel() {
-    const track = document.getElementById('carouselTrack');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const currentSlideElement = document.getElementById('currentSlide');
-    const totalSlidesElement = document.getElementById('totalSlides');
-    
-    totalSlidesElement.textContent = totalSlides;
-    updateSlideCounter();
-    
-    prevBtn.addEventListener('click', () => {
-        if (currentSlide > 0) {
-            currentSlide--;
-        } else {
-            currentSlide = totalSlides - 1;
-        }
-        updateCarousel();
-    });
-    
-    nextBtn.addEventListener('click', () => {
-        if (currentSlide < totalSlides - 1) {
-            currentSlide++;
-        } else {
-            currentSlide = 0;
-        }
-        updateCarousel();
-    });
-    
-    // Auto-play del carrusel
-    setInterval(() => {
-        if (currentSlide < totalSlides - 1) {
-            currentSlide++;
-        } else {
-            currentSlide = 0;
-        }
-        updateCarousel();
-    }, 4000);
-}
-
-function updateCarousel() {
-    const track = document.getElementById('carouselTrack');
-    const translateX = -currentSlide * 100;
-    track.style.transform = `translateX(${translateX}%)`;
-    updateSlideCounter();
-}
-
-function updateSlideCounter() {
-    const currentSlideElement = document.getElementById('currentSlide');
-    currentSlideElement.textContent = currentSlide + 1;
-}
+// Carrusel eliminado
 
 // Parallax en la portada izquierda (layer transform to emulate fixed background)
 function initializeParallax() {
