@@ -173,10 +173,14 @@ function initializeCarousel() {
     const nextBtn = document.getElementById('nextBtn');
     const currentSlideElement = document.getElementById('currentSlide');
     const totalSlidesElement = document.getElementById('totalSlides');
-    
+
+    if (!track || !prevBtn || !nextBtn || !currentSlideElement || !totalSlidesElement) {
+        return;
+    }
+
     totalSlidesElement.textContent = totalSlides;
     updateSlideCounter();
-    
+
     prevBtn.addEventListener('click', () => {
         if (currentSlide > 0) {
             currentSlide--;
@@ -185,7 +189,7 @@ function initializeCarousel() {
         }
         updateCarousel();
     });
-    
+
     nextBtn.addEventListener('click', () => {
         if (currentSlide < totalSlides - 1) {
             currentSlide++;
@@ -194,7 +198,7 @@ function initializeCarousel() {
         }
         updateCarousel();
     });
-    
+
     // Auto-play del carrusel
     setInterval(() => {
         if (currentSlide < totalSlides - 1) {
@@ -208,6 +212,7 @@ function initializeCarousel() {
 
 function updateCarousel() {
     const track = document.getElementById('carouselTrack');
+    if (!track) return;
     const translateX = -currentSlide * 100;
     track.style.transform = `translateX(${translateX}%)`;
     updateSlideCounter();
@@ -215,6 +220,7 @@ function updateCarousel() {
 
 function updateSlideCounter() {
     const currentSlideElement = document.getElementById('currentSlide');
+    if (!currentSlideElement) return;
     currentSlideElement.textContent = currentSlide + 1;
 }
 
