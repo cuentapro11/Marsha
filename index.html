@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="ccs-2.css?v=force-20250909-54">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 <body>
     <!-- Modal de Bienvenida -->
@@ -23,8 +24,7 @@
             <h1 class="welcome-heading">Bienvenidos a la invitación de Rosmery XV</h1>
             <p class="welcome-subtitle">La música de fondo es parte de la experiencia</p>
             <div class="modal-buttons">
-                <button id="enterWithMusic" class="btn-wedding">Ingresar con música</button>
-                <button id="enterWithoutMusic" class="btn-wedding">Ingresar sin música</button>
+                <button id="enterInvitation" class="btn-wedding">Entrar a la invitación</button>
             </div>
         </div>
     </div>
@@ -83,7 +83,7 @@
         <div class="site-container hero-container">
             <div class="video-hero">
                 <div class="video-embed">
-                    <iframe src="https://player.vimeo.com/video/1119564318?autoplay=1&muted=1&playsinline=1&fl=pl&fe=sh" title="Vimeo video" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="no-referrer"></iframe>
+                    <iframe id="vimeo-player" src="https://player.vimeo.com/video/1119564318?fl=pl&fe=sh&playsinline=1" title="Vimeo video" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="no-referrer"></iframe>
                 </div>
             </div>
         </div>

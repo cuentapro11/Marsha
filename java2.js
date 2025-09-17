@@ -1,6 +1,7 @@
 // Variables globales
 let isPlaying = false;
-let player = null;
+let player = null; // YouTube player (legacy)
+let vimeoPlayer = null; // Vimeo player
 let currentSlide = 0;
 const totalSlides = 12;
 let enableMusic = false;
@@ -16,23 +17,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Modal de bienvenida
 function initializeModal() {
-    const enterWithMusic = document.getElementById('enterWithMusic');
-    const enterWithoutMusic = document.getElementById('enterWithoutMusic');
+    const enterInvitation = document.getElementById('enterInvitation');
     const modal = document.getElementById('welcomeModal');
+    if (!enterInvitation || !modal) return;
 
-    enterWithMusic.addEventListener('click', function() {
-        enableMusic = true;
+    enterInvitation.addEventListener('click', function() {
         modal.style.display = 'none';
-        if (window.YT && window.YT.Player) {
-            initializeYouTubePlayer();
-        } else {
-            loadYouTubeAPI();
-        }
+        // Intentar reproducir Vimeo con sonido
+        tryPlayVimeoWithSound();
     });
+}
 
-    enterWithoutMusic.addEventListener('click', function() {
-        enableMusic = false;
-        modal.style.display = 'none';
+function tryPlayVimeoWithSound() {
+    const iframe = document.getElementById('vimeo-player');
+    if (!iframe || !window.Vimeo || !window.Vimeo.Player) return;
+    if (!vimeoPlayer) {
+        vimeoPlayer = new window.Vimeo.Player(iframe);
+    }
+    // Quitar mute si estuviese aplicado por políticas previas
+    vimeoPlayer.setVolume(1).then(() => {
+        return vimeoPlayer.play();
+    }).then(() => {
+        isPlaying = true;
+    }).catch(() => {
+        // Si falla (por políticas del navegador), intentamos play nuevamente
+        vimeoPlayer.play().catch(() => {});
     });
 }
 
