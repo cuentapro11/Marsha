@@ -1152,28 +1152,12 @@ div, button, input, textarea {
     max-width: 300px;
 }
 
-/* Floating WhatsApp confirm button */
-.whatsapp-fab {
-    position: fixed;
-    right: 1rem;
-    bottom: 1rem;
-    height: 48px;
-    border-radius: 9999px;
-    border: none;
-    background: #25D366;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    z-index: 1000;
-    padding: 0 0.875rem;
+/* WhatsApp button inside RSVP section */
+.whatsapp-in-section {
+    background: #25D366 !important;
+    color: #ffffff !important;
 }
-.whatsapp-fab span {
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-.whatsapp-fab:hover {
+.whatsapp-in-section:hover {
     filter: brightness(1.05);
 }
 
