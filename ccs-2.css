@@ -563,12 +563,7 @@ body {
 }
 
 /* Sección unificada de asistencia y regalo */
-.attend-gift-section {
-    padding: 4rem 1rem;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+/* eliminado: estilos de sección unificada de asistencia y regalo */
 
 .gallery-section,
 .gifts-section {
