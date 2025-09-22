@@ -1421,6 +1421,20 @@ button.btn-wedding,
     border: none !important;
 }
 
+/* Botón del modal: "Entrar a la invitación" en azul */
+.modal-buttons .btn-wedding {
+    background: #1e40af !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+.modal-buttons .btn-wedding:hover,
+.modal-buttons .btn-wedding:focus,
+.modal-buttons .btn-wedding:active {
+    background: #1e3a8a !important;
+    color: #ffffff !important;
+}
+
 /* Títulos en azul (encabezados y títulos de secciones) */
 h1, h2, h3, h4, h5, h6,
 .section-title,
