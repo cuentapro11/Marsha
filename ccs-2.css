@@ -996,7 +996,7 @@ body {
 /* Footer como sección final */
 .footer-section {
     padding: 4rem 1rem;
-    background-color: #FFF2F3 !important;
+    background-color: #1b3a6b !important; /* azul más oscuro que los laterales */
 }
 .footer-section .footer-content {
     text-align: center;
@@ -1526,5 +1526,5 @@ h1, h2, h3, h4, h5, h6,
 
 /* Asegurar secuencia: footer como siguiente sección clara */
 .footer-section {
-    background-color: #FFF2F3 !important;
+    background-color: #1b3a6b !important; /* asegurar override al final */
 }
