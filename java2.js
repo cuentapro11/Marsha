@@ -3,7 +3,7 @@ let isPlaying = false;
 let player = null; // YouTube player (legacy)
 let vimeoPlayer = null; // Vimeo player
 let currentSlide = 0;
-const totalSlides = 12;
+const totalSlides = 8;
 let enableMusic = false;
 
 // Inicializar cuando el DOM esté listo
