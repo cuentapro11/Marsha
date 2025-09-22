@@ -1404,6 +1404,23 @@ button.btn-wedding,
     color: #ffffff !important;
 }
 
+/* Override azul con mayor especificidad para todas las secciones */
+.countdown-section .btn-wedding,
+.gallery-section .btn-wedding,
+.gifts-section .btn-wedding,
+.footer-section .btn-wedding,
+.events-section .btn-wedding,
+.party-section .btn-wedding,
+.rsvp-section .btn-wedding,
+.gallery-section .carousel-btn,
+.events-section .carousel-btn,
+.party-section .carousel-btn,
+.rsvp-section .carousel-btn {
+    background: #1e40af !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
 /* Títulos en azul (encabezados y títulos de secciones) */
 h1, h2, h3, h4, h5, h6,
 .section-title,
