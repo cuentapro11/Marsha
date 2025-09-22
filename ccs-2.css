@@ -1001,12 +1001,12 @@ body {
 .footer-section .footer-content {
     text-align: center;
 }
-/* Override global de color de texto a negro */
+/* Override global de color de texto normal a negro */
 body,
 h1, h2, h3, h4, h5, h6,
 p, span, a, li, label, small, strong, em,
 div, button, input, textarea {
-    color: #899899 !important;
+    color: #000000 !important;
 }
 
 /* Theming de botones e iconos por sección */
@@ -1019,7 +1019,7 @@ div, button, input, textarea {
 .gallery-section .carousel-btn {
     background: #FDE2E1 !important;
     border: none !important;
-    color: #000 !important;
+    color: #000000 !important;
 }
 
 .gallery-section .carousel-btn:hover { 
@@ -1060,7 +1060,7 @@ div, button, input, textarea {
 .rsvp-section .carousel-btn {
     background: #FFF2F3 !important;
     border: none !important;
-    color: #000 !important;
+    color: #000000 !important;
 }
 
 .events-section .carousel-btn:hover,
@@ -1069,7 +1069,7 @@ div, button, input, textarea {
     background: #FFF2F3 !important; 
 }
 
-/* Forzar color de texto #899899 en TODOS los botones, con igual o mayor especificidad */
+/* Forzar color de texto negro en TODOS los botones, con igual o mayor especificidad */
 .countdown-section .btn-wedding,
 .gallery-section .btn-wedding,
 .gifts-section .btn-wedding,
@@ -1083,7 +1083,7 @@ div, button, input, textarea {
 .rsvp-section .carousel-btn,
 .modal-buttons #enterWithMusic.btn-wedding,
 .modal-buttons #enterWithoutMusic.btn-wedding {
-    color: #899899 !important;
+    color: #000000 !important;
 }
 
 /* Remover bordes/círculos dorados de TODOS los íconos y del contador */
@@ -1359,12 +1359,22 @@ button.btn-wedding[onclick="confirmAttendance()"]:active {
     }
 }
 
-/* Texto de todos los botones en blanco */
+/* Texto de todos los botones en negro */
 button,
 .btn-wedding,
 button.btn-wedding,
 .carousel-btn {
-    color: #899899 !important;
+    color: #000000 !important;
+}
+
+/* Títulos en azul (encabezados y títulos de secciones) */
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.event-title,
+.welcome-heading,
+.modal-title,
+.footer-content h3 {
+    color: #0000FF !important;
 }
 
 @media (max-width: 480px) {
