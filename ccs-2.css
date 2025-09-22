@@ -1528,3 +1528,12 @@ h1, h2, h3, h4, h5, h6,
 .footer-section {
     background-color: #1b3a6b !important; /* asegurar override al final */
 }
+
+/* Fondo con imagen para Conteo Regresivo y Eventos (sin cambiar organización) */
+.countdown-section,
+.events-section {
+    background-image: url('https://i.ibb.co/272BcKSq/Gemini-Generated-Image-ppxqqeppxqqeppxq.png') !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
