@@ -1,6 +1,7 @@
 // Variables globales
 let isPlaying = false;
-let player = null;
+let player = null; // YouTube player (legacy)
+let vimeoPlayer = null; // Vimeo player
 let currentSlide = 0;
 const totalSlides = 12;
 let enableMusic = false;
@@ -16,23 +17,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Modal de bienvenida
 function initializeModal() {
-    const enterWithMusic = document.getElementById('enterWithMusic');
-    const enterWithoutMusic = document.getElementById('enterWithoutMusic');
+    const enterInvitation = document.getElementById('enterInvitation');
     const modal = document.getElementById('welcomeModal');
+    if (!enterInvitation || !modal) return;
 
-    enterWithMusic.addEventListener('click', function() {
-        enableMusic = true;
+    enterInvitation.addEventListener('click', function() {
         modal.style.display = 'none';
-        if (window.YT && window.YT.Player) {
-            initializeYouTubePlayer();
-        } else {
-            loadYouTubeAPI();
-        }
+        // Intentar reproducir Vimeo con sonido
+        tryPlayVimeoWithSound();
     });
+}
 
-    enterWithoutMusic.addEventListener('click', function() {
-        enableMusic = false;
-        modal.style.display = 'none';
+function tryPlayVimeoWithSound() {
+    const iframe = document.getElementById('vimeo-player');
+    if (!iframe || !window.Vimeo || !window.Vimeo.Player) return;
+    if (!vimeoPlayer) {
+        vimeoPlayer = new window.Vimeo.Player(iframe);
+    }
+    // Quitar mute si estuviese aplicado por políticas previas
+    vimeoPlayer.setVolume(1).then(() => {
+        return vimeoPlayer.play();
+    }).then(() => {
+        isPlaying = true;
+    }).catch(() => {
+        // Si falla (por políticas del navegador), intentamos play nuevamente
+        vimeoPlayer.play().catch(() => {});
     });
 }
 
@@ -173,10 +182,14 @@ function initializeCarousel() {
     const nextBtn = document.getElementById('nextBtn');
     const currentSlideElement = document.getElementById('currentSlide');
     const totalSlidesElement = document.getElementById('totalSlides');
-    
+
+    if (!track || !prevBtn || !nextBtn || !currentSlideElement || !totalSlidesElement) {
+        return;
+    }
+
     totalSlidesElement.textContent = totalSlides;
     updateSlideCounter();
-    
+
     prevBtn.addEventListener('click', () => {
         if (currentSlide > 0) {
             currentSlide--;
@@ -185,7 +198,7 @@ function initializeCarousel() {
         }
         updateCarousel();
     });
-    
+
     nextBtn.addEventListener('click', () => {
         if (currentSlide < totalSlides - 1) {
             currentSlide++;
@@ -194,7 +207,7 @@ function initializeCarousel() {
         }
         updateCarousel();
     });
-    
+
     // Auto-play del carrusel
     setInterval(() => {
         if (currentSlide < totalSlides - 1) {
@@ -208,6 +221,7 @@ function initializeCarousel() {
 
 function updateCarousel() {
     const track = document.getElementById('carouselTrack');
+    if (!track) return;
     const translateX = -currentSlide * 100;
     track.style.transform = `translateX(${translateX}%)`;
     updateSlideCounter();
@@ -215,6 +229,7 @@ function updateCarousel() {
 
 function updateSlideCounter() {
     const currentSlideElement = document.getElementById('currentSlide');
+    if (!currentSlideElement) return;
     currentSlideElement.textContent = currentSlide + 1;
 }
 
@@ -267,7 +282,7 @@ function openLocation(location) {
 }
 
 function suggestMusic() {
-    const whatsappMessage = "¡Hola! Me gustaría sugerir una canción para la playlist de los XV de Rosmery 🎵";
+    const whatsappMessage = "¡Hola! Me gustaría sugerir una canción para la playlist de Rosmery 🎵";
     const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
 }
@@ -281,13 +296,13 @@ function showTips() {
 }
 
 function showGifts() {
-    const message = "Hola, me gustaría información sobre los regalos para los XV de Rosmery 🎁";
+    const message = "Hola, me gustaría información sobre los regalos para Rosmery 🎁";
     const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }
 
 function confirmAttendance() {
-    const message = "¡Hola! Quiero confirmar mi asistencia a los XV de Rosmery 💖✨";
+    const message = "¡Hola! Quiero confirmar mi asistencia a la invitación de Rosmery 💖✨";
     const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 }

@@ -162,8 +162,6 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
 }
 
 .modal-content {
@@ -225,17 +223,7 @@ body {
 /* Ocultar marca de agua "Fede & Lore" del fondo en el modal */
 .modal-overlay .script-names { display: none; }
 
-.modal-overlay .welcome-hero::before {
-    content: "";
-    position: absolute;
-    inset: -40vh -10vw -40vh -10vw;
-    background-image: url('https://i.ibb.co/5W8Zjdk9/09e63d1c599174e6560fae197a8f996a.jpg');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.55;
-    z-index: -1;
-    filter: blur(15px);
-}
+.modal-overlay .welcome-hero::before { display: none; }
 
 .welcome-heading {
     font-family: 'Playfair Display', serif;
@@ -288,16 +276,14 @@ body {
 }
 
 /* Botones del modal: colores solicitados */
-.modal-buttons #enterWithMusic.btn-wedding,
-.modal-buttons #enterWithoutMusic.btn-wedding {
+.modal-buttons .btn-wedding {
     background-image: none !important;
-    background: #FFF2F3 !important;
-    background-color: #FFF2F3 !important;
+    background: #FDE2E1 !important;
+    background-color: #FDE2E1 !important;
     border: none !important;
     color: #899899 !important;
 }
-.modal-buttons #enterWithMusic.btn-wedding:hover,
-.modal-buttons #enterWithoutMusic.btn-wedding:hover {
+.modal-buttons .btn-wedding:hover {
     transform: translateY(-2px) scale(1.05);
     box-shadow: var(--shadow-gold);
 }
@@ -459,6 +445,32 @@ body {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+/* Video hero responsive */
+.video-hero {
+    display: block;
+    padding: 0;
+}
+
+.video-embed {
+    position: relative;
+    width: 100%;
+    /* 16:9 aspect ratio */
+    padding-top: 56.25%;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: none;
+    background: #000;
+}
+
+.video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 /* El hero-left usa siempre background; en móvil cambiamos el attachment */
@@ -1138,6 +1150,20 @@ div, button, input, textarea {
     transform: translateX(100%);
     transition: all 0.3s ease;
     max-width: 300px;
+}
+
+/* WhatsApp button inside RSVP section */
+.whatsapp-in-section {
+    background: #25D366 !important;
+    color: #ffffff !important;
+}
+.whatsapp-in-section:hover {
+    filter: brightness(1.05);
+}
+
+/* Restore border specifically for the WhatsApp button in RSVP */
+.rsvp-section .whatsapp-in-section {
+    border: 2px solid #ffffff !important;
 }
 
 /* Final overrides: eliminar completamente anillos/bordes dorados de todos los iconos */
