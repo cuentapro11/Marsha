@@ -1178,11 +1178,11 @@ div, button, input, textarea {
 
 /* WhatsApp button inside RSVP section */
 .whatsapp-in-section {
-    background: #25D366 !important;
+    background: #1e40af !important;
     color: #ffffff !important;
 }
 .whatsapp-in-section:hover {
-    filter: brightness(1.05);
+    background: #1e3a8a !important;
 }
 
 /* Restore border specifically for the WhatsApp button in RSVP */
