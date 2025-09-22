@@ -1528,7 +1528,7 @@ h1, h2, h3, h4, h5, h6,
 .countdown-section,
 .gallery-section,
 .gifts-section {
-    background-color: #FFF2F3 !important; /* rosado muy claro */
+    background-color: transparent !important; /* sin fondo rosado */
 }
 
 .events-section,
