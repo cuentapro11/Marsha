@@ -1428,6 +1428,19 @@ button.btn-wedding,
     color: #ffffff !important;
     border: none !important;
 }
+
+/* Azul explícito para "Confirmar asistencia" y "Ver más" */
+.events-section .whatsapp-in-section,
+.gifts-section button.btn-wedding[onclick="showGifts()"] {
+    background: #1e40af !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+.events-section .whatsapp-in-section:hover,
+.gifts-section button.btn-wedding[onclick="showGifts()"]:hover {
+    background: #1e3a8a !important;
+    color: #ffffff !important;
+}
 .modal-buttons .btn-wedding:hover,
 .modal-buttons .btn-wedding:focus,
 .modal-buttons .btn-wedding:active {
