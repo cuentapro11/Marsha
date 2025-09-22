@@ -1367,6 +1367,30 @@ button.btn-wedding,
     color: #000000 !important;
 }
 
+/* Botones azules (override final) */
+.btn-wedding,
+button.btn-wedding,
+.carousel-btn,
+.whatsapp-in-section {
+    background: #1e40af !important; /* azul profundo */
+    background-image: none !important;
+    color: #ffffff !important; /* texto blanco para contraste */
+    border: none !important;
+}
+
+.btn-wedding:hover,
+.btn-wedding:focus,
+.btn-wedding:active,
+.carousel-btn:hover,
+.carousel-btn:focus,
+.carousel-btn:active,
+.whatsapp-in-section:hover,
+.whatsapp-in-section:focus,
+.whatsapp-in-section:active {
+    background: #1e3a8a !important; /* azul un poco más oscuro al interactuar */
+    color: #ffffff !important;
+}
+
 /* Títulos en azul (encabezados y títulos de secciones) */
 h1, h2, h3, h4, h5, h6,
 .section-title,
