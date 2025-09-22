@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="ccs-2.css?v=force-20250917-01">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 <body>
     <!-- Modal de Bienvenida -->
@@ -78,12 +77,15 @@
     </div>
     
     <main>
-    <!-- Hero: reemplazado por video -->
+    <!-- Hero: dos portadas -->
     <div class="hero-wrapper">
         <div class="site-container hero-container">
-            <div class="video-hero">
-                <div class="video-embed">
-                    <iframe id="vimeo-player" src="https://player.vimeo.com/video/1119564318?fl=pl&fe=sh&playsinline=1" title="Vimeo video" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy" referrerpolicy="no-referrer"></iframe>
+            <div class="hero-split">
+                <div class="hero-left">
+                    <div class="hero-left-bg"></div>
+                </div>
+                <div class="hero-right">
+                    <img src="https://i.ibb.co/5W8Zjdk9/09e63d1c599174e6560fae197a8f996a.jpg" alt="Portada derecha">
                 </div>
             </div>
         </div>
@@ -116,6 +118,35 @@
                         <div class="countdown-number" id="seconds">00</div>
                         <div class="countdown-label">SEG</div>
                     </div>
+                </div>
+            </section>
+
+            <!-- Galería con carrusel de fotos -->
+            <section class="gallery-section">
+                <div class="gallery-container">
+                    <h2 class="section-title">Galería</h2>
+                    <p class="section-subtitle">Algunas fotos especiales</p>
+                    <div class="carousel-container">
+                        <button id="prevBtn" class="carousel-btn carousel-prev" aria-label="Anterior">&#10094;</button>
+                        <div class="carousel-track-container">
+                            <ul id="carouselTrack" class="carousel-track">
+                                <li class="carousel-item"><img src="https://i.ibb.co/5W8Zjdk9/09e63d1c599174e6560fae197a8f996a.jpg" alt="Foto 1"></li>
+                                <li class="carousel-item"><img src="https://i.ibb.co/5W8Zjdk9/09e63d1c599174e6560fae197a8f996a.jpg" alt="Foto 2"></li>
+                                <li class="carousel-item"><img src="https://i.ibb.co/5W8Zjdk9/09e63d1c599174e6560fae197a8f996a.jpg" alt="Foto 3"></li>
+                                <li class="carousel-item"><img src="https://i.ibb.co/5W8Zjdk9/09e63d1c599174e6560fae197a8f996a.jpg" alt="Foto 4"></li>
+                                <li class="carousel-item"><img src="https://i.ibb.co/5W8Zjdk9/09e63d1c599174e6560fae197a8f996a.jpg" alt="Foto 5"></li>
+                                <li class="carousel-item"><img src="https://i.ibb.co/5W8Zjdk9/09e63d1c599174e6560fae197a8f996a.jpg" alt="Foto 6"></li>
+                                <li class="carousel-item"><img src="https://i.ibb.co/5W8Zjdk9/09e63d1c599174e6560fae197a8f996a.jpg" alt="Foto 7"></li>
+                                <li class="carousel-item"><img src="https://i.ibb.co/5W8Zjdk9/09e63d1c599174e6560fae197a8f996a.jpg" alt="Foto 8"></li>
+                                <li class="carousel-item"><img src="https://i.ibb.co/5W8Zjdk9/09e63d1c599174e6560fae197a8f996a.jpg" alt="Foto 9"></li>
+                                <li class="carousel-item"><img src="https://i.ibb.co/5W8Zjdk9/09e63d1c599174e6560fae197a8f996a.jpg" alt="Foto 10"></li>
+                                <li class="carousel-item"><img src="https://i.ibb.co/5W8Zjdk9/09e63d1c599174e6560fae197a8f996a.jpg" alt="Foto 11"></li>
+                                <li class="carousel-item"><img src="https://i.ibb.co/5W8Zjdk9/09e63d1c599174e6560fae197a8f996a.jpg" alt="Foto 12"></li>
+                            </ul>
+                        </div>
+                        <button id="nextBtn" class="carousel-btn carousel-next" aria-label="Siguiente">&#10095;</button>
+                    </div>
+                    <div class="carousel-counter"><span id="currentSlide">1</span>/<span id="totalSlides">12</span></div>
                 </div>
             </section>
 
