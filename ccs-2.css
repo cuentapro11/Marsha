@@ -562,6 +562,14 @@ body {
     padding: 4rem 1rem;
 }
 
+/* Sección unificada Gifts + RSVP con mismo layout interno */
+.gifts-rsvp-section {
+    padding: 4rem 1rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 /* Sección unificada de asistencia y regalo */
 /* eliminado: estilos de sección unificada de asistencia y regalo */
 
