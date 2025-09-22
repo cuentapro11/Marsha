@@ -20,7 +20,7 @@
     /* #FFF2F3 (superior), #DFB6B4 (laterales), #FDE2E1 (inferior) */
     --pink-light: 355 100% 97%; /* #FFF2F3 */
     --pink-dark: 2 87% 94%;     /* #FDE2E1 */
-    --pink-sides: 3 40% 79%;    /* #DFB6B4 */
+    --pink-sides: 200 65% 88%;   /* sea blue light for page borders */
 }
 
 /* Contenedor centrado tipo tarjeta */
