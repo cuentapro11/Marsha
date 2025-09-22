@@ -1595,3 +1595,19 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
+/* Mobile override: usar imagen específica en móvil para la sección unificada */
+@media (max-width: 768px) {
+    .countdown-events-section {
+        background-image: url('https://i.ibb.co/fzhd2F2m/Dise-o-sin-t-tulo.png') !important;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .countdown-events-section .countdown-section,
+    .countdown-events-section .events-section,
+    .countdown-events-section .gallery-section,
+    .countdown-events-section .gifts-section {
+        background: transparent !important;
+    }
+}
+
