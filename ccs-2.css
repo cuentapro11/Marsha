@@ -1430,14 +1430,19 @@ button.btn-wedding,
 }
 
 /* Azul explícito para "Confirmar asistencia" y "Ver más" */
-.events-section .whatsapp-in-section,
-.gifts-section button.btn-wedding[onclick="showGifts()"] {
+/* Fuerza máxima: azul para Confirmar asistencia y Ver más en cualquier contexto */
+section .whatsapp-in-section,
+section button.btn-wedding[onclick="showGifts()"],
+.countdown-events-section .whatsapp-in-section,
+.countdown-events-section button.btn-wedding[onclick="showGifts()"] {
     background: #1e40af !important;
     color: #ffffff !important;
     border: none !important;
 }
-.events-section .whatsapp-in-section:hover,
-.gifts-section button.btn-wedding[onclick="showGifts()"]:hover {
+section .whatsapp-in-section:hover,
+section button.btn-wedding[onclick="showGifts()"]:hover,
+.countdown-events-section .whatsapp-in-section:hover,
+.countdown-events-section button.btn-wedding[onclick="showGifts()"]:hover {
     background: #1e3a8a !important;
     color: #ffffff !important;
 }
